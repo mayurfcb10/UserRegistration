@@ -16,7 +16,7 @@ public class UserRegistration {
 			}
 		}else {
 			System.out.println("Invalid First Name");
-			//FirstName();
+			FirstName();
 		}
 
 	}
@@ -30,7 +30,7 @@ public class UserRegistration {
 			Email();
 		}else {
 			System.out.println("Invalid Last Name");
-			//LastName();
+			LasttName();
 		}
 
 	}
@@ -41,9 +41,22 @@ public class UserRegistration {
 		boolean matcher = email.matches( "^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$");
 		if(matcher == true) {
 			System.out.println("Valid Email");
+			Mobile();
 		}else {
 			System.out.println("Invalid Email");
 			//Email();
+		}
+	}
+	
+	public void Mobile() {
+		System.out.println("Enter the valid mobile number: ");
+		String mobile = sc.nextLine();
+		boolean matcher = mobile.matches("([0-9]{2})?[7-9][0-9]{9}");
+		if(matcher == true) {
+			System.out.println("Valid Mobile Number");
+		}else {
+			System.out.println("Invalid Mobile Number");
+			//Mobile();
 		}
 	}
 
