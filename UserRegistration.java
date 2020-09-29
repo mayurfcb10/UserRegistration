@@ -27,10 +27,24 @@ public class UserRegistration {
 		boolean matcher = lastName.matches("([A-Z][a-z]{2,})");
 		if(matcher == true) {
 			System.out.println("Valid Last Name");
+			Email();
 		}else {
 			System.out.println("Invalid Last Name");
+			//LastName();
 		}
 
+	}
+	
+	public void Email() {
+		System.out.println("Enter the valid email: ");
+		String email = sc.nextLine();
+		boolean matcher = email.matches( "^[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\.[a-z]{2,}){0,1}$");
+		if(matcher == true) {
+			System.out.println("Valid Email");
+		}else {
+			System.out.println("Invalid Email");
+			//Email();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -43,5 +57,5 @@ public class UserRegistration {
 			flag = false;
 		}
 		
-
 	}
+}
