@@ -5,18 +5,18 @@ import java.util.Scanner;
 public class UserRegistration {
 
 	static final Scanner sc = new Scanner(System.in);
-	
+
 	public void FirstName() {
 		System.out.println("Enter the first name: ");
 		String firstName = sc.nextLine();
 		boolean matcher = firstName.matches("([A-Z][a-z]{2,})");
 		if(matcher == true) {
 			System.out.println("Valid First Name");
-			 LastName(); {
+			LastName(); {
 			}
 		}else {
 			System.out.println("Invalid First Name");
-			//FirstName();
+			FirstName();
 		}
 
 	}
@@ -34,7 +34,7 @@ public class UserRegistration {
 		}
 
 	}
-	
+
 	public void Email() {
 		System.out.println("Enter the valid email: ");
 		String email = sc.nextLine();
@@ -47,7 +47,7 @@ public class UserRegistration {
 			//Email();
 		}
 	}
-	
+
 	public void Mobile() {
 		System.out.println("Enter the valid mobile number: ");
 		String mobile = sc.nextLine();
@@ -60,17 +60,18 @@ public class UserRegistration {
 			//Mobile();
 		}
 	}
-	
+
 	public void Password() {
 		System.out.println("Enter the Password");
 		String password = sc.nextLine();
-		boolean matcher = password.matches("([A-Z])?(.{7,})");
+		boolean matcher = password.matches("(?=.*[A-Z]?)(?=.*[0-9])(.{6,})");
+
 		if(matcher == true) {
 			System.out.println("Valid Password");
 		}else {
 			System.out.println("Invalid Password");
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
@@ -82,6 +83,6 @@ public class UserRegistration {
 			register.FirstName();
 			flag = false;
 		}
-		
+
 	}
 }
