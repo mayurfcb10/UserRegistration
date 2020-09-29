@@ -30,7 +30,7 @@ public class UserRegistration {
 			Email();
 		}else {
 			System.out.println("Invalid Last Name");
-			LasttName();
+			LastName();
 		}
 
 	}
@@ -44,7 +44,7 @@ public class UserRegistration {
 			Mobile();
 		}else {
 			System.out.println("Invalid Email");
-			//Email();
+			Email();
 		}
 	}
 	
@@ -54,10 +54,24 @@ public class UserRegistration {
 		boolean matcher = mobile.matches("([0-9]{2})?[7-9][0-9]{9}");
 		if(matcher == true) {
 			System.out.println("Valid Mobile Number");
+			Password();
 		}else {
 			System.out.println("Invalid Mobile Number");
-			//Mobile();
+			Mobile();
 		}
+	}
+	
+	public void Password() {
+		System.out.println("Enter the Password");
+		String password = sc.nextLine();
+		boolean matcher = password.matches(".{8,}");
+	
+		if(matcher == true) {
+			System.out.println("Valid Password");
+		}else {
+			System.out.println("Invalid Password");
+		}
+		
 	}
 
 	public static void main(String[] args) {
