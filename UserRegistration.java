@@ -16,7 +16,7 @@ public class UserRegistration {
 			}
 		}else {
 			System.out.println("Invalid First Name");
-			FirstName();
+			//FirstName();
 		}
 
 	}
@@ -30,7 +30,7 @@ public class UserRegistration {
 			Email();
 		}else {
 			System.out.println("Invalid Last Name");
-			LastName();
+			//LastName();
 		}
 
 	}
@@ -44,7 +44,7 @@ public class UserRegistration {
 			Mobile();
 		}else {
 			System.out.println("Invalid Email");
-			Email();
+			//Email();
 		}
 	}
 	
@@ -57,15 +57,14 @@ public class UserRegistration {
 			Password();
 		}else {
 			System.out.println("Invalid Mobile Number");
-			Mobile();
+			//Mobile();
 		}
 	}
 	
 	public void Password() {
 		System.out.println("Enter the Password");
 		String password = sc.nextLine();
-		boolean matcher = password.matches(".{8,}");
-	
+		boolean matcher = password.matches("([A-Z])?(.{7,})");
 		if(matcher == true) {
 			System.out.println("Valid Password");
 		}else {
