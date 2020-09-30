@@ -1,5 +1,3 @@
-/* Welcome to the User Registration Problem */
-
 import java.util.Scanner;
 
 public class UserRegistration {
@@ -30,7 +28,7 @@ public class UserRegistration {
 			Email();
 		}else {
 			System.out.println("Invalid Last Name");
-			//LastName();
+			FirstName();
 		}
 
 	}
@@ -44,27 +42,27 @@ public class UserRegistration {
 			Mobile();
 		}else {
 			System.out.println("Invalid Email");
-			//Email();
+			LastName();
 		}
 	}
 
 	public void Mobile() {
 		System.out.println("Enter the valid mobile number: ");
 		String mobile = sc.nextLine();
-		boolean matcher = mobile.matches("([0-9]{2})?[7-9][0-9]{9}");
+		boolean matcher = mobile.matches("([0-9]{2})?"//w"[7-9][0-9]{9}");
 		if(matcher == true) {
 			System.out.println("Valid Mobile Number");
 			Password();
 		}else {
 			System.out.println("Invalid Mobile Number");
-			//Mobile();
+			Mobile();
 		}
 	}
 
 	public void Password() {
 		System.out.println("Enter the Password");
 		String password = sc.nextLine();
-		boolean matcher = password.matches("(?=.*[A-Z]?)(?=.*[0-9])(.{6,})");
+		boolean matcher = password.matches("(^(?=.*[A-Z]))(?=.*[0-9])(?=.*[a-z])(?=.*[@*&^%#-*+!]{1}).{8,}$")");
 
 		if(matcher == true) {
 			System.out.println("Valid Password");
